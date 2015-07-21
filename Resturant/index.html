@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--To support HTML 5 elemants in IE < 9 include shiv -->
+    <!--[If lt IE 9]>
+    script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js"></script>
+  <![endif]-->
+
+    <title>TasteBuds</title>
+    <link href='http://fonts.googleapis.com/css?family=Alex+Brush' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TasteBuds, a fusion resturant. A perfect place to hang out with friends and family and offers food to die for.">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body>
+<header style="margin-bottom: 0px">
+    <nav class="navbar navbar-inverse ">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">TasteBuds</a>
+                <span class="icon-bar"></span>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav ">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Menu <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Lunch</a></li>
+                            <li><a href="#">Dinner</a></li>
+                            <li><a href="#">Kids</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact Us</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a title="Reservations" class="dropdown-toggle" data-toggle="dropdown" href="#"><span
+                                class="glyphicon glyphicon-list-alt"></span> Guest</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#openReservation">Make Reservation</a></li>
+                            <li><a href="#openReservationChange">Change Reservation</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a title="Login" href="#openLoginModal"><span class="glyphicon glyphicon-log-in"></span>
+                        Staff</a>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section style="margin-top:0px" !important>
+
+    <!--Popup login dialog-->
+    <div class="container popup-content" style="margin-top:0px">
+        <div class="container modalLoginDialog" id="openLoginModal">
+            <div class="login-plane">
+                <a href="#close" title="Close" class="close">X</a>
+                <h6>Login</h6>
+                <form role="form">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" placeholder="example@abc.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="password">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> Remember me</label>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn large-btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-link">Forgot Password?</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--popup Reservation-->
+        <div class="container modelReservationDialog" id="openReservation">
+            <div class="login-plane">
+                <a href="#close" title="Close" class="close">X</a>
+                <h6>Make A Reservation</h6>
+                <form role="form">
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="firstname">First Name:</label>
+                                <input type="text" class="form-control" id="firstname" placeholder="FirstName" autofocus="autofocus" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="lastname">Last Name:</label>
+                                <input type="text" class="form-control" id="lastname" placeholder="LastName" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="date">Date:</label>
+                                <input type="date" class="form-control" id="date" placeholder="MM/DD/YYYY" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="time">Time:</label>
+                                <input type="time" class="form-control" id="time" placeholder="HH:MM" min="10:00" max="20:00" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="tel">Phone:</label>
+                                <input type="tel" class="form-control" id="tel" placeholder="xxxxxxxxxx" pattern="[789][0-9]{9}" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="form-group">
+                                <label for="emailid">Email:</label>
+                                <input type="email" class="form-control" id="emailid" placeholder="example@abc.com" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="guests">Guests:</label>
+                                <input type="number" class="form-control" id="guests" placeholder="##" min="1" max="20" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="HighChairs">HighChairs:</label>
+                                <input type="number" class="form-control" id="HighChairs" placeholder="##" min="1" max="20" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="occassion">Occassion:</label>
+                                <input type="text" class="form-control" id="occassion" placeholder="Birthday">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn large-btn btn-primary">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!--popup Reservation change-->
+        <div class="container modelReservationChangeDialog" id="openReservationChange">
+            <div class="login-plane">
+                <a href="#close" title="close" class="close">X</a>
+                <h6>Update Reservation</h6>
+                <form role="form">
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="reservationCode">Enter Reservation Code:</label>
+                                <input type="text" class="form-control" id="reservationCode" placeholder="ABCR56TG" autofocus="autofocus" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-pencil"></span> Update</a>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <a href="#" class="btn btn-lg"><span class="glyphicon glyphicon-remove"></span> Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="dateupdate">Date:</label>
+                                <input type="date" class="form-control" id="dateupdate" placeholder="MM/DD/YYYY" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="timeupdaet">Time:</label>
+                                <input type="time" class="form-control" id="timeupdaet" placeholder="HH:MM" min="10:00" max="20:00" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="guestsupdate">Guests:</label>
+                                <input type="number" class="form-control" id="guestsupdate" placeholder="##" min="1" max="20" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label for="HighChairsupdate">HighChairs:</label>
+                                <input type="number" class="form-control" id="HighChairsupdate" placeholder="##" min="1" max="20" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label for="note">Note:</label>
+                                <input type="text" class="form-control" id="note" placeholder="Birthday">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn large-btn btn-primary">Confirm</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- -->
+    </div>
+</section>
+
+
+</body>
+</html>
